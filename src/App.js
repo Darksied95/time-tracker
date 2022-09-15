@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Card from "./components/Card";
 import data from "./assets/data.json";
 import profilePic from "./assets/image-jeremy.png";
@@ -5,6 +6,8 @@ import more from "./assets/icon-ellipsis.svg";
 import "./App.css";
 
 function App() {
+  const [timeFrame, setTimeFrame] = useState('weekly');
+  const timeFrames = ['daily', 'weekly', 'monthly']
   return (
     <main className="App">
       <header>
@@ -15,13 +18,23 @@ function App() {
           </h1>
         </div>
         <ul className="interval">
-          <li>Daily</li>
-          <li>Weekly</li>
-          <li>Monthly</li>
+          {
+            timeFrames.map(time =>
+              <li
+                key={time}
+                id={time}
+                onClick={({ target: { id } }) => setTimeFrame(id)}
+                style={{ color: (timeFrame === time) ? 'white' : null }}>{time[0].toUpperCase() + time.slice(1)}</li>
+            )
+          }
         </ul>
       </header>
-      {data.map((each) => (
-        <Card moreLogo={more} key={each.title} each={each} />
+      {data.map(({ title, timeframes }) => (
+        <Card moreLogo={more}
+          key={title}
+          title={title}
+          timeframes={timeframes[timeFrame]}
+          timeframe={timeFrame} />
       ))}
     </main>
   );
