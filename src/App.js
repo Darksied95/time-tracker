@@ -1,3 +1,5 @@
+import Card from "./components/Card";
+import data from "./assets/data.json";
 import profilePic from "./assets/image-jeremy.png";
 import more from "./assets/icon-ellipsis.svg";
 import "./App.css";
@@ -18,18 +20,9 @@ function App() {
           <li>Monthly</li>
         </ul>
       </header>
-      <div className="content-container">
-        <div className="content-body">
-          <div className="content-heading">
-            <h2>Work</h2>
-            <img src={more} alt="more" className="more" />
-          </div>
-          <div className="content-details">
-            <h3>32hrs</h3>
-            <p>Last week- 36hrs</p>
-          </div>
-        </div>
-      </div>
+      {data.map((each) => (
+        <Card moreLogo={more} key={each.title} each={each} />
+      ))}
     </main>
   );
 }

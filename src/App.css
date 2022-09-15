@@ -47,9 +47,13 @@ li {
   cursor: pointer;
 }
 .content-container {
-  background-color: var(--clr-work);
-  padding-top: 1.5em;
+  background-repeat: no-repeat;
+  background-position: 95% 0%;
+  background-size: 70px;
+  padding-top: 2.3em;
   border-radius: 18px;
+  color: white;
+  margin-bottom: 1em;
 }
 .content-body {
   background-color: hsl(235, 46%, 30%);
@@ -62,9 +66,22 @@ li {
   justify-content: space-between;
   align-items: center;
   /* outline: 1px solid blue; */
-  height: 30px;
+  height: 40px;
 }
-
+.content-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.content-time {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
 .more {
   height: 5px;
+}
+.previous-content {
+  font-size: 0.7rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  opacity: 0.8;
 }
