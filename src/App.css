@@ -11,9 +11,9 @@ header {
 header > div {
   background-color: var(--clr-blue);
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  gap: 30px;
+  /* gap: 30px; */
   padding: 1.5em 0em;
   border-radius: 18px;
 }
@@ -41,7 +41,7 @@ header .interval {
   justify-content: space-between;
   padding: 1em 2em;
   margin-top: 0;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--clr-pale-blue);
 }
 li {
   cursor: pointer;
@@ -52,8 +52,12 @@ li {
   background-size: 70px;
   padding-top: 2.3em;
   border-radius: 18px;
-  color: white;
+  color: whitesmoke;
   margin-bottom: 1em;
+}
+.content-body:hover {
+  background-color: var(--clr-desaturated-blue);
+  cursor: pointer;
 }
 .content-body {
   background-color: hsl(235, 46%, 30%);
@@ -83,5 +87,74 @@ li {
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 1px;
-  opacity: 0.8;
+  color: var(--clr-pale-blue);
+}
+
+@media screen and (min-width: 450px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    grid-template-rows: 250px 250px;
+    grid-template-areas:
+      "zero one two three"
+      "zero four five six";
+    margin-top: 10em;
+  }
+  header {
+    grid-area: zero;
+  }
+  #work {
+    grid-area: one;
+  }
+  #play {
+    grid-area: two;
+  }
+  #study {
+    grid-area: three;
+  }
+  #exercise {
+    grid-area: four;
+  }
+  #social {
+    grid-area: five;
+  }
+  #self-care {
+    grid-area: six;
+  }
+  .content-heading,
+  .content-details {
+    height: 87px;
+  }
+  header > div {
+    height: 70%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 2em;
+  }
+  .header-picture {
+    margin-bottom: 3em;
+  }
+  .report span {
+    font-size: 3rem;
+  }
+  ul {
+    flex-direction: column;
+  }
+  li {
+    margin-bottom: 1em;
+  }
+  .content-details {
+    display: block;
+    gap: 0;
+    margin-top: 0;
+  }
+  .content-details h3 {
+    font-size: 2.4rem;
+    margin: 0;
+  }
+  .content-details p {
+    margin: 0;
+  }
 }

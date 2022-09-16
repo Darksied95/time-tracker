@@ -8,15 +8,20 @@ import "./App.css";
 function App() {
   const [timeFrame, setTimeFrame] = useState('weekly');
   const timeFrames = ['daily', 'weekly', 'monthly']
+
   return (
-    <main className="App">
+    <main>
       <header>
+
         <div>
+
           <img src={profilePic} alt="profile-pic" className="header-picture" />
           <h1 className="report">
             Report for <br /> <span>Jeremy Robson</span>
           </h1>
+
         </div>
+
         <ul className="interval">
           {
             timeFrames.map(time =>
@@ -28,7 +33,9 @@ function App() {
             )
           }
         </ul>
+
       </header>
+
       {data.map(({ title, timeframes }) => (
         <Card moreLogo={more}
           key={title}
@@ -36,6 +43,7 @@ function App() {
           timeframes={timeframes[timeFrame]}
           timeframe={timeFrame} />
       ))}
+
     </main>
   );
 }

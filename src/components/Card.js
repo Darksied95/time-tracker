@@ -24,7 +24,7 @@ const Card = ({ moreLogo, title, timeframes, timeframe }) => {
     }
 
     return (
-        <div className="content-container" style={style}>
+        <div className="content-container" style={style} id={styleName}>
 
             <div className="content-body">
 
